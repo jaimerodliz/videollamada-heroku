@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>  
+        const ROOM_ID = "<%= roomId %>"
+        const user_type="user"
+        const user_name="<%= userName %>"
+    </script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/alertify.min.css" />
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/script.js" defer></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/04199e8328.js" crossorigin="anonymous"></script>
+    <script src="/js/alertify.min.js"></script>
+    <title>Videollamada</title>
+</head>
+<body>
+    <div id="main" class="contenedor">
+        <div class="contenedor_video">
+            <div id="video-grid"></div>
+        </div>
+        <div class="contenedor_control">
+            <div class="controles_principales">
+                <div onclick="videoAction()" class="controls_button hover_rojo" id="btn_video">
+                    <i class="fas fa-video"></i>
+                    <span>Desactivar</span>
+                 </div>
+                <div onclick="muteAction()" class="controls_button hover_rojo" id="btn_mute">
+                   <i class="fas fa-microphone"></i>
+                   <span>Silenciar</span>
+                </div>
+                <div onclick="openChat()" class="controls_button hover_verde" id="btn_chat">
+                    <i class="fab fa-rocketchat"></i>
+                    <span>Chat</span>
+                </div>
+                <div onclick="shareScreen_()" class="controls_button hover_verde" id="btn_compartir">
+                    <i class="fas fa-desktop"></i>
+                    <span>Compartir</span>
+                </div>
+            </div>
+            <div class="controles_principales">
+                <div onclick="leaveRoom()" class="controls_button" id="btn_salir">
+                    <i class="far fa-window-close"></i>
+                    <span>Salir</span>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <!--<a href="javascript:void(0)" class="closebtn" >×</a>-->
+        <div class="box-header">
+            <button type="button" class="close" >
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">Chat</h5>
+              
+        </div>
+        
+        <div class="content_chat">
+            <ul class="messages">
+
+            </ul>
+        </div>
+        <div class="bottom_chat">
+            <input id="chat_message" type="text" placeholder="Mensaje...">
+        </div>
+        
+    </div> 
+</body>
+
+
+</html>
